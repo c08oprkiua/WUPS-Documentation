@@ -79,7 +79,7 @@ This means you provided invalid arguments to whichever function you called.
 
 ## WUPS_USE_STORAGE("{storage dir here}");
 
-*Selects the storage directory for the storage API.
+*Selects the config file for the storage API. This should be located in `sd:/wiiu/environments/{environment}/plugins/config/` as `{storage dir here}.json`
 
 # Functions
 All these functions return a `WUPSStorageError`, with the exception of `closeItem` and `WUPS_GetStorageStatusStr`
