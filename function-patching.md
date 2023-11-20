@@ -185,12 +185,12 @@ Of course, plugins could only go so far if they couldn't patch over things, so A
 
 # Macros
 
-## `WUPS_MUST_REPLACE_PHYSICAL(x, physical_address, virtual_address)`
+`WUPS_MUST_REPLACE_PHYSICAL(x, physical_address, virtual_address)`
 
-## `WUPS_MUST_REPLACE_PHYSICAL_FOR_PROCESS(x, physical_address, virtual_address, targetProcess)`
+`WUPS_MUST_REPLACE_PHYSICAL_FOR_PROCESS(x, physical_address, virtual_address, targetProcess)`
 
-## `WUPS_MUST_REPLACE(x, lib, function_name)`
+`WUPS_MUST_REPLACE(x, lib, function_name)`
 
-# `WUPS_MUST_REPLACE_FOR_PROCESS(x, lib, function_name, targetProcess)`
+`WUPS_MUST_REPLACE_FOR_PROCESS(x, lib, function_name, targetProcess)`
 
 # Functions
