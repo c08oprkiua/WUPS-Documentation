@@ -61,7 +61,7 @@ This means you provided invalid arguments to whichever function you called.
 
 `WUPS_STORAGE_ERROR_B64_DECODE_FAILED` = -9
 
-*This means that the encoding of Item (binary) data to base64 failed. 
+*This means that the decoding of Item (binary) data to base64 failed. 
 
 `WUPS_STORAGE_ERROR_BUFFER_TOO_SMALL` = -10
 
