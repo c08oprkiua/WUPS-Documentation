@@ -77,28 +77,28 @@ This means you provided invalid arguments to whichever function you called.
 
 # Macros
 
-`WUPS_USE_STORAGE("{storage dir here}");`
+## `WUPS_USE_STORAGE("{storage dir here}");`
 
 *Selects the config file for the storage API. This should be located in `sd:/wiiu/environments/{environment}/plugins/config/` as `{storage dir here}.json`
 
 # Functions
 All these functions return a `WUPSStorageError`, with the exception of `closeItem` and `WUPS_GetStorageStatusStr`
 
-`WUPS_GetStorageStatusStr(WUPSStorageError status)`
+## `WUPS_GetStorageStatusStr(WUPSStorageError status)`
 
 Call this to get an entered `WUPSStorageError` error, `status`, but as a string. 
 
-`WUPS_InitStorage(wups_loader_init_storage_args_t args)`
+## `WUPS_InitStorage(wups_loader_init_storage_args_t args)`
 
 **This is called by the backend.** Initializes storage.
 
-`WUPS_OpenStorage`
+## `WUPS_OpenStorage`
 
-`closeItem(wups_storage_item_t *item)`
+## `closeItem(wups_storage_item_t *item)`
 
 *Closes an item?
 
-`WUPS_CloseStorage`
+## `WUPS_CloseStorage`
 
 Closes storage and saves changes.
 
@@ -119,31 +119,31 @@ Gets a sub item. Must be called on a SubItem before getting sub-values from it.
 Store a string in storage. 
 *`*parent` is the category the string is in, `*key` is the key for the string, and `*string` is the string itself you're trying to store.
 
-`WUPS_StoreBool(wups_storage_item_t *parent, const char *key, bool value)`
+## `WUPS_StoreBool(wups_storage_item_t *parent, const char *key, bool value)`
 
 Store a boolean value in storage.
 
-`WUPS_StoreInt(wups_storage_item_t *parent, const char *key, int32_t value)`
+## `WUPS_StoreInt(wups_storage_item_t *parent, const char *key, int32_t value)`
 
 Store a `uint32_t` integer in storage.
 
-`WUPS_StoreBinary(wups_storage_item_t *parent, const char *key, const void *data, uint32_t size)`
+## `WUPS_StoreBinary(wups_storage_item_t *parent, const char *key, const void *data, uint32_t size)`
 
 Store raw binary data in storage.
 
-`WUPS_GetString(wups_storage_item_t *parent, const char *key, char *outString, uint32_t maxSize)`
+## `WUPS_GetString(wups_storage_item_t *parent, const char *key, char *outString, uint32_t maxSize)`
 
 Get a string from storage.
 
-`WUPS_GetBool(wups_storage_item_t *parent, const char *key, bool *outBool)`
+## `WUPS_GetBool(wups_storage_item_t *parent, const char *key, bool *outBool)`
 
 Get a boolean value from storage.
 
-`WUPS_GetInt(wups_storage_item_t *parent, const char *key, int32_t *outInt)`
+## `WUPS_GetInt(wups_storage_item_t *parent, const char *key, int32_t *outInt)`
 
 Get a `uint32_t` value from storage.
 
-`WUPS_GetBinary(wups_storage_item_t *parent, const char *key, void *outData, uint32_t maxSize)`
+## `WUPS_GetBinary(wups_storage_item_t *parent, const char *key, void *outData, uint32_t maxSize)`
 
 Get raw binary data from storage.
 *`*parent` is the parent Item/Subitem, `*key` is the key for the data, `*outData` is a reference to where you want the data output to go, and `maxSize` is the maximum size of the `outData`.
