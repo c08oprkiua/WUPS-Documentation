@@ -77,8 +77,9 @@ This means you provided invalid arguments to whichever function you called.
 
 # Macros
 
+## WUPS_USE_STORAGE("{storage dir here}");
 
-
+*Selects the storage directory for the storage API.
 
 # Functions
 All these functions return a `WUPSStorageError`, with the exception of `closeItem` and `WUPS_GetStorageStatusStr`
