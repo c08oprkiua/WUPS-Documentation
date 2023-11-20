@@ -1,6 +1,8 @@
-# Enums
+# Storage
 
-The Aroma Plugin System contains functions for storing and retrieving data.
+*The Aroma Plugin System contains a function set for storing and retrieving plugin settings.
+
+# Enums
 
 ## `wups_storage_type_t`
 `WUPS_STORAGE_TYPE_INVALID` = 0
@@ -87,7 +89,7 @@ Call this to get an entered `WUPSStorageError` error, `status`, but as a string.
 
 `WUPS_InitStorage(wups_loader_init_storage_args_t args)`
 
-Call this to initialize storage for your plugin. 
+**This is called by the backend.** Initializes storage.
 
 `WUPS_OpenStorage`
 
@@ -97,27 +99,50 @@ Call this to initialize storage for your plugin.
 
 `WUPS_CloseStorage`
 
-
+Closes storage and saves changes.
 
 `WUPS_DeleteItem`
 
+Deletes a key from storage.
+
 `WUPS_CreateSubItem`
+
+Creates a sub item.
 
 `WUPS_GetSubItem`
 
-`WUPS_StoreString`
+Gets a sub item. Must be called on a SubItem before getting sub-values from it.
 
-`WUPS_StoreBool`
+`WUPS_StoreString(wups_storage_item_t *parent, const char *key, const char *string)`
 
-`WUPS_StoreInt`
+Store a string in storage. 
+*`*parent` is the category the string is in, `*key` is the key for the string, and `*string` is the string itself you're trying to store.
 
-`WUPS_StoreBinary`
+`WUPS_StoreBool(wups_storage_item_t *parent, const char *key, bool value)`
 
-`WUPS_GetString`
+Store a boolean value in storage.
 
-`WUPS_GetBool`
+`WUPS_StoreInt(wups_storage_item_t *parent, const char *key, int32_t value)`
 
-`WUPS_GetInt`
+Store a `uint32_t` integer in storage.
 
-`WUPS_GetBinary`
+`WUPS_StoreBinary(wups_storage_item_t *parent, const char *key, const void *data, uint32_t size)`
 
+Store raw binary data in storage.
+
+`WUPS_GetString(wups_storage_item_t *parent, const char *key, char *outString, uint32_t maxSize)`
+
+Get a string from storage.
+
+`WUPS_GetBool(wups_storage_item_t *parent, const char *key, bool *outBool)`
+
+Get a boolean value from storage.
+
+`WUPS_GetInt(wups_storage_item_t *parent, const char *key, int32_t *outInt)`
+
+Get a `uint32_t` value from storage.
+
+`WUPS_GetBinary(wups_storage_item_t *parent, const char *key, void *outData, uint32_t maxSize)`
+
+Get raw binary data from storage.
+*`*parent` is the parent Item/Subitem, `*key` is the key for the data, `*outData` is a reference to where you want the data output to go, and `maxSize` is the maximum size of the `outData`.
