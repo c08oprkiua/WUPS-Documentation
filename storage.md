@@ -77,7 +77,7 @@ This means you provided invalid arguments to whichever function you called.
 
 # Macros
 
-## WUPS_USE_STORAGE("{storage dir here}");
+`WUPS_USE_STORAGE("{storage dir here}");`
 
 *Selects the config file for the storage API. This should be located in `sd:/wiiu/environments/{environment}/plugins/config/` as `{storage dir here}.json`
 
