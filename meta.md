@@ -20,7 +20,7 @@ This sets the visible author(s) of your plugin.
 
 ## `WUPS_PLUGIN_LICENSE("{your plugin's license here}")`
 
-This sets the visible license that your plugin is licensed under (eg. MIT, GNUv3, etc.).
+This sets the visible license that your plugin is licensed under (eg. MIT, GPLv3, etc.).
 
 ## `WUPS_FS_ACCESS()`
 
